@@ -1,6 +1,6 @@
 {
   "name": "collection-processor-cli",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Package to ingest, sort, verify, and manage large email lists. License WTFPL with donations to BTC. 3Gjm838VRzhV8cp4zHecekhUrMPo1H4GJ6.",
   "bin": {
     "collection-processor-cli": "bin/collection-processor-cli"
