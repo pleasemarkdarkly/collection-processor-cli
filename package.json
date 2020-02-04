@@ -1,16 +1,9 @@
 {
   "name": "collection-processor-cli",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Package to ingest, sort, verify, and manage large email lists. License WTFPL with donations to BTC. 3Gjm838VRzhV8cp4zHecekhUrMPo1H4GJ6.",
   "bin": {
     "collection-processor-cli": "bin/collection-processor-cli"
-  },
-  "scripts": {
-    "dev": "nodejs-dashboard -- node -r nodejs-dashboard index.js -d ERROR",
-    "start": "node ./bin/collection-processor-cli.js -d INFO --sqlite --directory ./emails/small",
-    "start-medium": "node ./bin/collection-processor-cli.js -d INFO --sqlite --directory ./emails/medium",
-    "start-large": "node ./bin/collection-processor-cli.js -d INFO --sqlite --directory ./emails/large",
-    "test":  "echo \"All you bases are belong to us.\""
   },
   "repository": {
     "type": "git",
@@ -24,7 +17,7 @@
     "huge"
   ],
   "author": "pleasemarkdarkly",
-  "license": "SEE LICENSE IN README",
+  "license": "DWTFYW",
   "bugs": {
     "url": "https://github.com/pleasemarkdarkly/collection-processor-cli/issues"
   },
@@ -38,8 +31,5 @@
     "ora": "^4.0.3",
     "sqlite": "^3.0.3",
     "sqlite3": "^4.1.1"
-  },
-  "devDependencies": {
-    "eslint": "^6.8.0"
   }
 }
