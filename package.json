@@ -9,7 +9,8 @@
     "dev": "nodejs-dashboard -- node -r nodejs-dashboard index.js -d ERROR",
     "start": "node ./bin/collection-processor-cli.js -d INFO --sqlite --directory ./emails/small",
     "start-medium": "node ./bin/collection-processor-cli.js -d INFO --sqlite --directory ./emails/medium",
-    "start-large": "node ./bin/collection-processor-cli.js -d INFO --sqlite --directory ./emails/large"
+    "start-large": "node ./bin/collection-processor-cli.js -d INFO --sqlite --directory ./emails/large",
+    "test":  "echo \"All you bases are belong to us.\""
   },
   "repository": {
     "type": "git",
