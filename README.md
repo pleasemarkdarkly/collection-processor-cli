@@ -6,42 +6,43 @@ This package uses event-stream to tear through files. During development I used 
 
 ### If you want to buy me beer. BTC. 3Gjm838VRzhV8cp4zHecekhUrMPo1H4GJ6.
 ### Test dataset
-'''
+
+```
 large           216,053,550 (emails)
 medium        586,199
 medium         1,690,000
 small         35,166
 very small      6,000
-'''
+```
 
 ## Clone this repository
 
-'''
+```
 git clone https://github.com/pleasemarkdarkly/collection-processor-cli/
-'''
+```
 
 ## Installation
 
-'''
+```
 npm -i collection-processor-cli -g
-'''
+```
 
 ## Find a Folder full of tar.gz with credentials
 
-'''
+```
 ./email_preprocessor.sh
-'''
+```
 
 ## Usage
 
 Verbosity is defined by -d
-'''
+```
 -d DEBUG | INFO | ERROR | WARN
-'''
+```
 
 The most common usage is as follows.
 
-'''
+```
 collection-processor-cli -d DEBUG --sqlite --directory .
 
 
@@ -58,13 +59,13 @@ Options:
   --directory <string>     directory to process (overide --filename) (default: "/Users/pleasemarkdarkly/Developer/emails")
   -e, --only-emails        ingest only emails
   -h, --help               output usage information
-'''
+```
 
 ## Party
 
-'''
+```
 collection-processor-cli -d DEBUG --sqlite --directory /Volume/HDD/Collection1-6/
-'''
+```
 
 ## Disclaimer
 
