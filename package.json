@@ -24,11 +24,15 @@
   "homepage": "https://github.com/pleasemarkdarkly/collection-processor-cli#readme",
   "dependencies": {
     "commander": "^4.1.1",
+    "delay": "^4.3.0",
     "event-stream": "^4.0.1",
+    "mysql2": "^2.1.0",
     "node-color-log": "^2.2.0",
     "nodejs-dashboard": "^0.5.1",
     "np": "^5.2.1",
     "ora": "^4.0.3",
+    "p-queue": "^6.2.1",
+    "sequelize": "^5.21.3",
     "sqlite": "^3.0.3",
     "sqlite3": "^4.1.1"
   }

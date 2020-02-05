@@ -145,6 +145,10 @@ function ingest_content() {
         logger.error('db: failed create credential storage: ' + e);
     }
 
+    if (cmd.collection_processor_cli_config.ingest_filename) {
+        read_stream_file(cmd.collection_processor_cli_config.ingest_filename)
+    }
+
     setTimeout(function () {
         if (cmd.collection_processor_cli_config.ingest_filename != undefined) {
             logger.info('--filename: ' + cmd.collection_processor_cli_config.ingest_filename);
@@ -165,21 +169,20 @@ function ingest_content() {
     }, 1000);
 
 
-    if (array_emails.length == 0) {
-        db.get_emails(array_emails);
-        while (array_emails.length != 0) {
-            var email = array_emails.shift();
-            logger.info('verifying: ' + email + '(' + array_emails.length + ')');
-            // queue 50 look ups at a time
-        }
-    }
 
+    /*
+        if (array_emails.length == 0) {
+            db.get_emails(array_emails);
+            while (array_emails.length != 0) {
+                var email = array_emails.shift();
+                logger.info('verifying: ' + email + '(' + array_emails.length + ')');
+                // queue 50 look ups at a time
+            }
+        }
+    */
 }
 
 ingest_content();
-
-
-
 
 
 function collection_processor_cli_finally() {
