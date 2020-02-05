@@ -10,6 +10,8 @@ const debug_level = {
     WARN: 3
 };
 
+var array_emails = [];
+
 var collection_processor_cli_config = {
     debug_mode: debug_level.DEBUG,
     module_name: undefined,
@@ -155,6 +157,7 @@ function get_current_module() {
 module.exports = {
     debug_level: debug_level,
     collection_processor_cli_config: collection_processor_cli_config,
+    array_emails: array_emails,
     sleep: sleep,
     is_file_directory: is_file_directory,
     get_current_module: get_current_module

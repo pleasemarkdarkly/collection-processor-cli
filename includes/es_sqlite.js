@@ -77,13 +77,28 @@ async function insert_emails(id, email, is_valid = null, is_error = null, is_war
     try {
         var r = await sqlite.run(sql);
         if (id % email_step_count == 0) {
-            if (r) logger.info('db: (inserted) (' + email + ') (is_valid/is_error/is_warning)[' + is_valid + '][' + is_error + '][' + is_warning + ']');
+            if (r) logger.info('db: (inserted) id (' + this.lastID + ') (' + email + ') (is_valid/is_error/is_warning)[' + is_valid + '][' + is_error + '][' + is_warning + ']');
         }
     } catch (e) {
         logger.error('db: insert: ' + e);
         logger.error('db: variables: ' + sql);
     }
 }
+
+async function get_emails(array_email) {
+    var sql = "SELECT email FROM tbl_emails WHERE is_valid = null, is_error = null, is_warning = null"
+    try {
+        var r = await sqlite.each(sql);
+        if (r) {
+            logger.info('db: get_emails: ' + r)
+            array_email.push(r);
+        }
+    } catch (e) {
+        logger.error('db: insert: ' + e);
+        logger.error('db: variables: ' + sql);
+    }
+}
+
 
 async function close_credential_storage() {
     try {
@@ -115,6 +130,7 @@ module.exports = {
     insert_files: insert_files,
     insert_credentials: insert_credentials,
     insert_emails: insert_emails,
+    get_emails: get_emails,
     close_credential_stroage: close_credential_storage,
     remove_credentials_storage: remove_credentials_storage,
     close_remove_credential_storage: close_remove_credential_storage

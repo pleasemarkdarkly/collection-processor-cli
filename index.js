@@ -164,18 +164,31 @@ function ingest_content() {
         }
     }, 1000);
 
-    
+
+    if (array_emails.length == 0) {
+        db.get_emails(array_emails);
+        while (array_emails.length != 0) {
+            var email = array_emails.shift();
+            logger.info('verifying: ' + email + '(' + array_emails.length + ')');
+            // queue 50 look ups at a time
+        }
+    }
+
+}
+
+ingest_content();
 
 
 
+
+
+function collection_processor_cli_finally() {
     try {
         db.close_credential_storage
     } catch (e) {
         logger.error('db: close: ' + e);
     }
-}
-
-ingest_content();
+};
 
 var ctrl_count = 0;
 const EXIT_COUNT = 3;
@@ -186,11 +199,10 @@ process.on('SIGINT', function () {
         ctrl_count++;
     } else {
         logger.info(JSON.stringify(cmd.collection_processor_cli_config));
-        db.close_remove_credential_storage();
+        // db.close_remove_credential_storage();
         setTimeout(function () { process.exit(); }, 1000);
     }
 });
-
 
 module.exports = {
     total_lines: total_lines,
