@@ -31,6 +31,9 @@ npm -i collection-processor-cli -g
 
 ```
 ./email_preprocessor.sh
+
+You can use the following regex which will parse emails from files from the original Collection. 
+grep -o '[[:alnum:]+\.\_\-]*@[[:alnum:]+\.\_\-]*' "$name" | sort | uniq -i > $newname
 ```
 
 ## Usage
