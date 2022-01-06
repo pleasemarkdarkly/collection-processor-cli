@@ -5,9 +5,10 @@ Nodejs package to feed the contents of any "collection" or hundreds of files wit
 This package uses event-stream to tear through files. During development I tested many permuations of the below described data sets. This package performed well, without crashing nor running out of memory. The largest file tested was 4.1GB (upper limit of the packaged collection files) and the total files in the test suite was at the maximum Linux limit per folder. In short, this has processed well over 100,000,000 email records spanning 8,691 files, likely over what your email budget maybe able to handle.
 
 # applications
-I strongly condone the use of this code to process the [Collection #1-5](https://www.intego.com/mac-security-blog/collection-1-and-2-5-are-the-latest-massive-password-dumps/), however, if you do embark on this activity, please act responsibly. 
+I strongly condone the use of this code to process the [Collection #1-5](https://www.intego.com/mac-security-blog/collection-1-and-2-5-are-the-latest-massive-password-dumps/), however, if you do embark on this activity, please act responsibly. Aovid offensive behavior such as [this](https://www.troyhunt.com/password-reuse-credential-stuffing-and-another-1-billion-records-in-have-i-been-pwned/).
 
 ### If you want to buy me beer. BTC. 3Gjm838VRzhV8cp4zHecekhUrMPo1H4GJ6.
+
 ### "Test dataset"
 
 ```
@@ -30,7 +31,7 @@ git clone https://github.com/pleasemarkdarkly/collection-processor-cli/
 npm -i collection-processor-cli -g
 ```
 
-## Find a Folder full of tar.gz with credentials
+## "Find" a folder full of tar.gz with credentials
 
 ```
 ./email_preprocessor.sh
@@ -42,16 +43,15 @@ grep -o '[[:alnum:]+\.\_\-]*@[[:alnum:]+\.\_\-]*' "$name" | sort | uniq -i > $ne
 ## Usage
 
 Verbosity is defined by -d
+
 ```
 -d DEBUG | INFO | ERROR | WARN
 ```
 
-The most common usage is as follows.
+The most common usage pattern may look like the following.
 
 ```
 collection-processor-cli -d DEBUG --sqlite --directory .
-
-
 
 Usage: collection-processor-cli [options]
 
